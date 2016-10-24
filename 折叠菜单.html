@@ -32,13 +32,14 @@
             display: none;
         }
 
+
     </style>
 </head>
 <body>
 <ul id="menu">
     <li class="mainmenu">
        <h3>管理区</h3>
-        <ul class="submenu">
+        <ul class="submenu" style="display:none">
             <li><a href="#">001</a></li>
             <li><a href="#">002</a></li>
             <li><a href="#">003</a></li>
@@ -46,7 +47,7 @@
     </li>
     <li class="mainmenu">
         <h3 >交流区</h3>
-        <ul class="submenu">
+        <ul class="submenu" style="display:none">
 
             <li><a href="#">001</a></li>
             <li><a href="#">002</a></li>
@@ -59,18 +60,30 @@
         var ah3 = omenu.getElementsByTagName("h3");
         var asubmenu = omenu.getElementsByTagName("ul");
         for (var i=0; i<ah3.length; i++) {
-            ah3[i].index=i;
-            ah3[i].bFlag = false;
-            ah3[i].onclick =function(){
-                if(this.bFlag){
-                    asubmenu[this.index].style.display="none";
+            ah3[i].index = i;
+            // ah3[i].bFlag = false;
+            ah3[i].onclick = function () {
+//                console.log(asubmenu[this.index].style.display);
+
+                if (asubmenu[this.index].style.display == "none") {
+                    asubmenu[this.index].style.display = "block";
+                }else if (asubmenu[this.index].style.display == "block") {
+                    asubmenu[this.index].style.display = "none";
                 }
-                else{
-                    asubmenu[this.index].style.display="block";
-                }
-                this.bFlag=!this.bFlag;
-            };
+
+            }
         }
+
+
+//                if(this.bFlag){
+        //                    asubmenu[this.index].style.display="none";
+        //                }
+        //                else{
+        //                    asubmenu[this.index].style.display="block";
+        //                }
+        //                this.bFlag=!this.bFlag;
+        //            };
+        //        }
 
     </script>
 

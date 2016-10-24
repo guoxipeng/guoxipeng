@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+       多级导航菜单
+    </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        #menu li{
+            float: left;
+            margin-right: 5px;
+            line-height: 30px;
+
+        }
+       #menu .mainmenu{
+            background: #cccccc;
+            height: 30px;
+            width: 120px;
+            display: block;
+
+        }
+       #menu .submenu{
+           display: none;
+       }
+       #menu .submenu li{
+            float: none;
+           background: #eeeeee;
+           height: 30px;
+           width: 120px;
+           border-bottom: 1px dotted;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>
+            <a href="#" class="mainmenu">link 1</a>
+            <ul class="submenu">
+                <li><a href="#">sublink 1</a> </li>
+                <li><a href="#">sublink 2</a> </li>
+                <li><a href="#">sublink 3</a> </li>
+                <li><a href="#">sublink 2</a> </li>
+                <li><a href="#">sublink 3</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="mainmenu">link 2</a>
+            <ul  class="submenu">
+                <li><a href="#">sublink 1</a> </li>
+                <li><a href="#">sublink 2</a> </li>
+                <li><a href="#">sublink 3</a> </li><li><a href="#">sublink 2</a> </li>
+                <li><a href="#">sublink 3</a> </li>
+                <li><a href="#">sublink 2</a> </li>
+                <li><a href="#">sublink 3</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="mainmenu">link 3</a>
+            <ul  class="submenu">
+                <li><a href="#">sublink 1</a> </li>
+                <li><a href="#">sublink 2</a> </li>
+                <li><a href="#">sublink 3</a> </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var oMenu = document.getElementById('menu');
+        var aMenu = oMenu.getElementsByTagName('a');
+        var asubMenu = oMenu.getElementsByTagName('ul');
+        console.log(aMenu.length);
+        var aa = new Array();
+        for(var i=0; i<aMenu.length;i++){
+            if(aMenu[i].className =="mainmenu" ){
+                aa.push(aMenu[i]);
+            }
+        }
+        console.log(aa);
+        for(var i=0; i<aa.length;i++){
+           aa[i].index = i;
+            aa[i].onmouseover = function(){
+                asubMenu[this.index].style.display = 'block';
+            };
+            aa[i].onmouseout = function(){
+                asubMenu[this.index].style.display = 'none';
+            };
+        }
+
+    </script>
+
+</body>
+</html>
