@@ -60,16 +60,28 @@
         var oMenu=document.getElementById("menu");
         var aLi=oMenu.getElementsByTagName("li");
         var oText=document.getElementById("text");
-        var last=0;     //最后点击的li索引
+        //var last=0;     //最后点击的li索引
         for(var i=0;i<aLi.length;i++) {
-            aLi[i].index=i;
+            aLi[i].index = i;
             aLi[i].onclick = function () {
-                aLi[last].className = "";
-                this.className = "selected";
-                last = this.index;
-                oText.innerHTML=arr[this.index];
+                for (var i = 0; i < aLi.length; i++) {
+                    if (aLi[i].className == "selected") {
+                        aLi[i].className = "";
+                    }
+                    aLi[this.index].className = "selected";
+                    oText.innerHTML=arr[this.index];
+                }
             }
         }
+
+
+
+               //aLi[last].className = "";
+               // this.className = "selected";
+                //last = this.index;
+                //oText.innerHTML=arr[this.index];
+           // }
+       // }
     </script>
 </body>
 </html>
