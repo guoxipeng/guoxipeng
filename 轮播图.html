@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container li,#container span{
+            float: left;
+            background: #000000;
+            color: white;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 20px;
+        }
+        #content img{
+            width: 500px;
+            height: 350px;
+        }
+        #container{
+            margin: 50px auto;
+            width: 500px;
+            position: relative;
+        }
+        #content img{
+            display: none;
+
+        }
+        #content .selected {
+            display: block;
+        }
+        #nav{
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+        }
+        #arrows{
+            position: absolute;
+           left: 20px;
+            bottom: 10px;
+        }
+        #nav .selected{
+            background: orange;
+        }
+    </style>
+
+</head>
+<body>
+<div id="container">
+    <ul id="nav">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="content">
+        <img class="selected" src="img/1.jpg" alt=""/>
+        <img src="img/2.jpg" alt=""/>
+        <img src="img/3.jpeg" alt=""/>
+        <img src="img/4.jpeg" alt=""/>
+    </div>
+    <div id="arrows">
+        <span id="left"> &lt; </span>
+        <span id="right"> &gt; </span>
+    </div>
+</div>
+<script>
+    var oContainer = document.getElementById('container');
+    var oNav = document.getElementById('nav');
+    var aLi = oNav.getElementsByTagName('li');
+    var oContent = document.getElementById('content');
+    var aImg = oContent.getElementsByTagName('img');
+    var oArrow = document.getElementById('arrow');
+    var oLeft = document.getElementById('left');
+    var oRight = document.getElementById('right');
+    for(i=0;i<aLi.length;i++){
+        iNow = 0;
+        aLi[i].index = i;
+        aLi[i].onmousemove = function(){
+            myfunction(this.index);
+            iNow = this.index;
+        }
+    }
+    oRight.onclick = function(){
+        iNow++;
+        if(iNow==aLi.length){
+            iNow = 0;
+        }
+        myfunction(iNow);
+    };
+        oLeft.onclick = function(){
+            iNow--;
+            if(iNow==-1){
+                iNow = aLi.length - 1;
+            }
+            myfunction(iNow);
+        };
+
+    function myfunction(elem){
+        for(i=0;i<aLi.length;i++){
+            aLi[i].className = '';
+            aImg[i].className ='';
+        }
+        aLi[elem].className = 'selected';
+        aImg[elem].className = 'selected';
+
+    }
+    var timer;
+    function run(){
+        timer = setInterval(function(){
+            oRight.onclick();
+        },2000);
+    }
+    run();
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function(){
+        run();
+    };
+</script>
+</body>
+</html>
