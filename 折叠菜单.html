@@ -58,22 +58,31 @@
     <script>
         var omenu = document.getElementById("menu");
         var ah3 = omenu.getElementsByTagName("h3");
-        var asubmenu = omenu.getElementsByTagName("ul");
+        //var asubmenu = omenu.getElementsByTagName("ul");
         for (var i=0; i<ah3.length; i++) {
             ah3[i].index = i;
             // ah3[i].bFlag = false;
             ah3[i].onclick = function () {
 //                console.log(asubmenu[this.index].style.display);
-
-                if (asubmenu[this.index].style.display == "none") {
-                    asubmenu[this.index].style.display = "block";
-                }else if (asubmenu[this.index].style.display == "block") {
-                    asubmenu[this.index].style.display = "none";
+                var osubmenu = next(this);
+//                if (asubmenu[this.index].style.display == "none") {
+//                    asubmenu[this.index].style.display = "block";
+//                }else if (asubmenu[this.index].style.display == "block") {
+//                    asubmenu[this.index].style.display = "none";
+//                }
+                if(osubmenu.style.display == 'block'){
+                    osubmenu.style.display = 'none';
+                }else{
+                    osubmenu.style.display = 'block'
                 }
-
-            }
+            };
         }
-
+        function next(elem){
+            do{
+                elem=elem.nextSibling;
+            }while(elem && elem.nodeType != 1);
+            return elem;//封装一个函数
+        }
 
 //                if(this.bFlag){
         //                    asubmenu[this.index].style.display="none";
@@ -84,6 +93,8 @@
         //                this.bFlag=!this.bFlag;
         //            };
         //        }
+
+
 
     </script>
 
