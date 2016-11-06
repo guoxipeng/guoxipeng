@@ -92,22 +92,58 @@
     var oLeft = document.getElementById('left');
     var oRight = document.getElementById('right');
     var zIndex = 4;
-    for(i=0;i<aLi.length;i++){
+
+    for(i=0;i<aLi.length;i++) {
+        iNow = 0;
         aLi[i].index = i;
         aImg[i].style.zIndex = aImg.length - i;
-        aLi[i].onmouseover = function(){
-            for(i=0;i<aLi.length;i++){
-            aLi[i].className="";
-
+        aLi[i].onmouseover = function () {
+            myfunction(this.index);
+            iNow = this.index;
+        }
+    }
+        oRight.onclick = function () {
+            iNow++;
+            if (iNow == aLi.length) {
+                iNow = 0;
             }
-            this.className = 'selected';
-            var oImg = aImg[this.index];
+            myfunction(iNow)
+        };
+        oLeft.onclick = function () {
+            iNow--;
+            if (iNow == -1) {
+                iNow = aLi.length - 1
+            }
+            myfunction(iNow)
+        };
+       var timer;
+
+        function run() {
+            timer = setInterval(function () {
+                oRight.onclick();
+            }, 2000);
+        }
+
+        run();
+        oContainer.onmouseover = function () {
+            clearInterval(timer);
+        };
+        oContainer.onmouseout = function () {
+            run();
+        };
+        function myfunction(idx) {
+            for (i = 0; i < aLi.length; i++) {
+                aLi[i].className = "";
+            }
+            aLi[idx].className = 'selected';
+            var oImg = aImg[idx];
             oImg.style.opacity = 0;
             oImg.style.filter = "alpha(opacity=0)";
             oImg.style.zIndex = ++zIndex;
             animate(oImg, {opacity: 100});
-        };
-    }
+        }
+
+
 
 
 </script>
