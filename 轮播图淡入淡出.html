@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container li,#container span{
+            float: left;
+            background: #000000;
+            color: white;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 20px;
+        }
+        #content img{
+            width: 500px;
+            height: 350px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #container{
+            margin: 50px auto;
+            width: 500px;
+            height: 350px;
+            position: relative;
+        }
+        #content{
+            position: relative;
+        }
+
+        #content .selected {
+            display: block;
+        }
+        #nav{
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            z-index: 9999;
+        }
+        #arrows{
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            z-index: 9999;
+        }
+        #nav .selected{
+            background: orange;
+        }
+    </style>
+
+</head>
+<body>
+<div id="container">
+    <ul id="nav">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="content">
+        <img class="selected" src="img/1.jpg" alt=""/>
+        <img src="img/2.jpg" alt=""/>
+        <img src="img/3.jpeg" alt=""/>
+        <img src="img/4.jpeg" alt=""/>
+    </div>
+    <div id="arrows">
+        <span id="left"> &lt; </span>
+        <span id="right"> &gt; </span>
+    </div>
+</div>
+<script src="jslib.js"></script>
+<script>
+    var oContainer = document.getElementById('container');
+    var oNav = document.getElementById('nav');
+    var aLi = oNav.getElementsByTagName('li');
+    var oContent = document.getElementById('content');
+    var aImg = oContent.getElementsByTagName('img');
+    var oArrow = document.getElementById('arrow');
+    var oLeft = document.getElementById('left');
+    var oRight = document.getElementById('right');
+    var zIndex = 4;
+    for(i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aImg[i].style.zIndex = aImg.length - i;
+        aLi[i].onmouseover = function(){
+            for(i=0;i<aLi.length;i++){
+            aLi[i].className="";
+
+            }
+            this.className = 'selected';
+            var oImg = aImg[this.index];
+            oImg.style.opacity = 0;
+            oImg.style.filter = "alpha(opacity=0)";
+            oImg.style.zIndex = ++zIndex;
+            animate(oImg, {opacity: 100});
+        };
+    }
+
+
+</script>
+</body>
+</html>
