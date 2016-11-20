@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+
+
+    </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            height: 30px;
+        }
+        #menu li{
+            float: left;
+            height: 30px;
+            width: 120px;
+            background: #cccccc;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #text{
+            width: 400px;
+            height: 200px;
+            background: #cccccc;
+            float: none;
+            border-top: 1px solid #000;
+        }
+        #conter{
+            margin: 50px auto ;
+            height: 230px;
+            width: 400px;
+        }
+        #menu .selected{
+            background: #000000;
+            color: #ffffff;
+        }
+        #text div{
+            display: none;
+        }
+        #text .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="conter">
+       <ul id="menu">
+           <li class="selected">js</li>
+           <li>html</li>
+           <li>css</li>
+       </ul>
+       <div id="text">
+           <div class="selected">111111111</div>
+           <div>222222222</div>
+           <div>333333333</div>
+       </div>
+</div>
+<script>
+    var oMenu = document.getElementById('menu');
+    var aLi = oMenu.getElementsByTagName('li');
+    var oText = document.getElementById('text');
+    var aDiv = oText.getElementsByTagName('div');
+    for(i=0;i<aLi.length;i++){
+        aLi[i].index=i;
+        aLi[i].onclick = function(){
+            for(i=0;i<aDiv.length;i++){
+                aLi[i].className = '';
+                aDiv[i].className = ''
+            }
+            this.className = 'selected';
+            aDiv[this.index].className='selected';
+
+
+        };
+        aLi[i].onselectstart = function(){
+            return false;
+        }
+
+    }
+</script>
+</body>
+</html>

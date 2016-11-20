@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container{
+            margin: 50px auto;
+            width: 390px;
+            height: 200px;
+            border: 1px solid;
+        }
+        #content{
+            width: 520px;
+            position: absolute;
+        }
+        #container li{
+            width: 120px;
+            height: 120px;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            line-height: 120px;
+            font-size: 30px;
+            float: left;
+            margin-right: 10px;
+        }
+        #arrows{
+            width: 110px;
+            height: 30px;
+            position: absolute;
+            left: 50%;
+            margin-left: -55px;
+            bottom: 25px;
+        }
+        #lift,#right{
+            width: 50px;
+            height: 30px;
+            float: left;
+            background: #cccccc;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="content">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="arrows">
+        <span id="lift">向左</span>
+        <span id="right">向右</span>
+
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>多级导航</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            line-height: 30px;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu li{
+            float: left;
+            margin-right: 5px;
+        }
+        #menu .mainmenu{
+            background: #cccccc;
+            height: 30px;
+            width: 120px;
+            display: block;
+        }
+        #menu .submenu{
+            display: none;
+        }
+        #menu .submenu li{
+            background: #eeeeee;
+            float: none;
+            width: 120px;
+            border-bottom: 1px dotted;
+        }
+    </style>
+<body>
+<ul id="menu">
+    <li>
+        <a href="#" class="mainmenu">link 1</a>
+        <ul class="submenu">
+            <li><a href="#">sublink 1</a></li>
+            <li><a href="#">sublink 1</a></li>
+            <li><a href="#">sublink 1</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="mainmenu">link 2</a>
+        <ul class="submenu">
+            <li><a href="#">sublink 1</a></li>
+            <li><a href="#">sublink 1</a></li>
+            <li><a href="#">sublink 1</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="mainmenu">link 3</a>
+        <ul class="submenu">
+            <li><a href="#">sublink 1</a></li>
+            <li><a href="#">sublink 1</a></li>
+            <li><a href="#">sublink 1</a></li>
+        </ul>
+    </li>
+</ul>
+    <script>
+        var oMenu=document.getElementById("menu");
+        var aMainmenu=oMenu.getElementsByTagName("a");
+        var aSubmenu=oMenu.getElementsByTagName("ul");
+        var count = 0;
+        for(i=0;i<aMainmenu.length;i++) {
+            if (aMainmenu[i].className == "mainmenu")
+             {
+                aMainmenu[i].index = count++;
+
+                aMainmenu[i].onmousemove = function () {
+                    aSubmenu[this.index].style.display = "block";
+                };
+                 aMainmenu[i].onmouseout = function(){
+                     aSubmenu[this.index].style.display = "none";
+                 };
+
+            }
+        }
+    </script>
+
+</body>
+</html>
+
