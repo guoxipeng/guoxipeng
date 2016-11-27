@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #000000;
+        }
+        #container{
+            width: 570px;
+            height: 500px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #content1{
+            width: 570px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+        #content1 img{
+            width: 570px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #content2{
+            width: 2000px;
+            height: 100px;
+            background: #ffffff;
+            position: absolute;
+            left: 0;
+            top: 400px;
+
+        }
+        #content2 img{
+            width: 130px;
+            height: 80px;
+            float: left;
+            margin: 10px 0 10px 10px;
+            opacity: 0.3;
+        }
+        #number{
+            width: 570px;
+            height: 20px;
+            background: #000;
+            color: white;
+            opacity: 0.5;
+            text-align: right;
+            position: absolute;
+            bottom: 100px;
+            padding-right: 10px;
+            z-index: 999;
+        }
+        #prev,#next{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            z-index: 999;
+            background-image: url("imgs/btn.gif");
+            background-repeat: no-repeat;
+            opacity: 0;
+        }
+        #next{
+            background-position:0 -60px;
+            top: 200px;
+            right: 10px;
+
+        }
+        #prev{
+            background-position:0 0;
+            top: 200px;
+            left: 10px;
+        }
+        #content1 .selected{
+            display: block;
+        }
+        #content2 .selected{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="content1">
+          <img class="selected" src="imgs/1.jpg" alt=""/>
+          <img src="imgs/2.jpg" alt=""/>
+          <img src="imgs/3.jpg" alt=""/>
+          <img src="imgs/4.jpg" alt=""/>
+          <img src="imgs/5.jpg" alt=""/>
+          <img src="imgs/6.jpg" alt=""/>
+          <img src="imgs/7.jpg" alt=""/>
+          <img src="imgs/8.jpg" alt=""/>
+    </div>
+    <div id="number">
+        1/8
+    </div>
+    <div id="content2">
+        <img class="selected" src="imgs/1.jpg" alt=""/>
+        <img src="imgs/2.jpg" alt=""/>
+        <img src="imgs/3.jpg" alt=""/>
+        <img src="imgs/4.jpg" alt=""/>
+        <img src="imgs/5.jpg" alt=""/>
+        <img src="imgs/6.jpg" alt=""/>
+        <img src="imgs/7.jpg" alt=""/>
+        <img src="imgs/8.jpg" alt=""/>>
+    </div>
+        <span id="prev"></span>
+        <span id="next"></span>
+</div>
+<script src="jslib.js"></script>
+<script>
+    var oContainer = document.getElementById('container');
+    var oContent1 = document.getElementById('content1');
+    var aImg1 = oContent1.getElementsByTagName('img');
+    var oContent2 =document.getElementById('content2');
+    var aImg2 = oContent2.getElementsByTagName('img');
+    var oNumber = document.getElementById('number');
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+    var iImg2Width = aImg2[0].offsetWidth;
+    var zIndex = 8;
+    var iClick = 0;
+    var timer ;
+    for(i=0;i<aImg2.length;i++) {
+        aImg2[i].index = i;
+        aImg1[i].style.zIndex = aImg1.length - i;
+        aImg2[i].onclick = function () {
+            iClick = this.index;
+            myfunction(this.index);
+            oNumber.innerHTML= this.index+1 + "/8";
+        }
+    }
+    oNext.onmouseover = oPrev.onmouseover =function(){
+        animate(this, {opacity: 100});
+    };
+    oNext.onmouseout = oPrev.onmouseout =function(){
+        animate(this, {opacity: 0});
+    };
+    oPrev.onclick = oNext.onclick = function(){
+        if(this == oPrev){
+            iClick--;
+            if(iClick == -1){
+                iClick = aImg2.length ;
+                oContent2.style.left = -(aImg2.length - 4) * iImgWidth +  "px";
+            }
+            myfunction(iClick);
+            oNumber.innerHTML= iClick+1 + "/8";
+
+        }else{
+            iClick++;
+            if(iClick == aImg2.length){
+                iClick = 0;
+                oContent2.style.left = 0;
+            }
+            myfunction(iClick);
+            oNumber.innerHTML= iClick+1 + "/8";
+        }
+    };
+
+    run();
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function(){
+        run();
+    };
+
+    function run(){
+       timer = setInterval(function(){
+            oNext.onclick();
+        },1000);
+    }
+    function myfunction(idx) {
+        for (i = 0; i < aImg2.length; i++) {
+            aImg2[i].className = "";
+        }
+        aImg2[idx].className = 'selected';
+        var oImg1 = aImg1[idx];
+        oImg1.style.opacity = 0;
+        oImg1.style.filter = "alpha(opacity=0)";
+        oImg1.style.zIndex = ++zIndex;
+        animate(oImg1, {opacity: 100});
+        if(idx>1&&idx<6) {
+            animate(oContent2, {
+                left: -((idx - 1) *  (iImg2Width+10))
+            });
+        }
+        else if(idx<=1){
+            animate(oContent2,{left:0});
+        }
+        else{
+            animate(oContent2,{
+                left:-(4*(iImg2Width+10))
+            });
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
