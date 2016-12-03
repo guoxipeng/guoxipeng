@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    #first{
+        width: 96px;
+        height:48px;
+        border-radius: 50%;
+        position: relative;
+        border-width: 2px 2px 50px 2px;
+        border-color: black;
+        border-style: solid;
+        background: #eeeeee;
+    }
+    #first::before{
+        content: '';
+        width: 12px;
+        height:12px;
+        border: 18px solid black;
+        background:  #eeeeee;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+    #first::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: black;
+        border: 18px solid #eee;
+        border-radius: 50%;
+        width: 12px;
+        height:12px;
+    }
+</style>
+<body>
+<div id="first"></div>
+</body>
+</html>
