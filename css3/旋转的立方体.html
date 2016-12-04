@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000;
+            perspective:1000px ;
+        }
+        #container{
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate .1s linear infinite;
+        }
+        #container div{
+            width: 400px;
+            height: 400px;
+            background: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            text-align: center;
+            line-height:400px;
+            font-size: 160px;
+            position: absolute;
+            opacity: 0.6;
+        }
+        @keyframes rotate {
+            from{
+
+            }
+            to{
+                transform: rotateY(-360deg);
+            }
+        }
+        #one{
+            transform:rotateY(180deg) translateZ(200px);
+
+        }
+        #two{
+            transform: rotateX(90deg) translateZ(200px);
+        }
+        #three{
+            transform: rotateY(90deg) translateZ(200px);
+        }
+        #four{
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+        #five{
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+        #six{
+            transform: translateZ(200px);
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+   <div id="one">1</div>
+   <div id="two">2</div>
+   <div id="three">3</div>
+   <div id="four">4</div>
+   <div id="five">5</div>
+   <div id="six">6</div>
+</div>
+</body>
+</html>
