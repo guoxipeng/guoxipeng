@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #clock{
+            width: 400px;
+            height: 400px;
+            border: 5px solid black;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+        }
+        #biaozhen li:nth-child(5n+1){
+            height: 20px ;
+        }
+        #biaozhen li{
+            width: 4px;
+            height: 12px;
+            background: #000000;
+            position: absolute;
+            left: 200px;
+            transform-origin: 0 200px;
+        }
+        #shizhen{
+            width: 10px;
+            height: 80px;
+            background: #000;
+            position: absolute;
+            top: 120px;
+            left: 195px;
+            transform-origin: bottom;
+        }
+        #fenzhen{
+            width: 8px;
+            height: 120px;
+            background: green;
+            position: absolute;
+            top: 80px;
+            left:196px ;
+            transform-origin: bottom;
+        }
+        #miaozhen{
+            width: 4px;
+            height: 160px;
+            background: red;
+            position: absolute;
+            top: 40px;
+            left: 198px;
+            transform-origin: bottom;
+        }
+    </style>
+</head>
+<body>
+   <div id="clock">
+       <ul id="biaozhen"></ul>
+       <div id="shizhen"></div>
+       <div id="fenzhen"></div>
+       <div id="miaozhen"></div>
+   </div>
+   <script>
+       var oBiaozhen = document.getElementById("biaozhen");
+       var oShizhen = document.getElementById("shizhen");
+       var oFenzhen = document.getElementById("fenzhen");
+       var oMiaozhen = document.getElementById("miaozhen");
+       var html = ""
+       for(i=0;i<60;i++){
+           html+="<li style='transform:rotate("+ i*6 +"deg)'></li>";
+           oBiaozhen.innerHTML = html;
+       }
+       setInterval(function(){
+           var now = new Date();
+           var miao = now.getSeconds();
+           var fen = now.getMinutes() + miao/60;
+           var shi = now.getHours()+fen/60;
+           oShizhen.style.transform = "rotate("+ shi * 30 +"deg)";
+           oFenzhen.style.transform = "rotate("+ fen * 6 +"deg)";
+           oMiaozhen.style.transform = "rotate("+ miao * 6 +"deg)";
+       },1000)
+   </script>
+
+</body>
+</html>
