@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 49px;
+            height: 49px;
+            position: relative;
+            margin: 500px auto;
+        }
+        #container img{
+            position: absolute;
+            transition: all 1s ;
+
+        }
+        #container img:first-child{
+            z-index: 1;
+        }
+        .rightrotate{
+            -webkit-animation: rightrotate 1s ease forwards ;
+            -o-animation: rightrotate 1s ease forwards ;
+            animation: rightrotate 1s ease forwards ;
+        }
+        @keyframes rightrotate {
+            from{
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .leftrotate{
+            -webkit-animation: leftrotate 1s ease forwards ;
+            -o-animation: leftrotate 1s ease forwards ;
+            animation: leftrotate 1s ease forwards ;
+        }
+        @keyframes leftrotate {
+            from{
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(-360deg);
+            }
+        }
+        .first{
+           transform: translate(-160px, 0) rotate(360deg);
+        }
+        .second{
+            transform: translate(0 ,-160px) rotate(360deg);
+        }
+        .third{
+            transform: translate(-135px, -55px ) rotate(360deg);
+        }
+        .four{
+            transform: translate(-100px ,-100px) rotate(360deg);
+        }
+        .five{
+            transform: translate(-55px ,-135px) rotate(360deg);
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <img src="img/home.png" alt="" class=""/>
+    <img src="img/close.png" alt="" class="" />
+    <img src="img/full.png" alt="" class=""/>
+    <img src="img/open.png" alt="" class="" />
+    <img src="img/prev.png" alt="" class=""/>
+    <img src="img/refresh.png" alt="" class=""/>
+</div>
+<script>
+    var oContainer = document.getElementById("container");
+    var aImg = oContainer.getElementsByTagName("img");
+    var iNow = 2;
+    var index = 0;
+    aImg[0].onclick = function(){
+
+        if(iNow%2==0){
+                aImg[0].className = "rightrotate";
+                aImg[1].className = "first";
+                aImg[2].className = "second";
+                aImg[3].className = "third";
+                aImg[4].className = "four";
+                aImg[5].className = "five";
+                iNow++;
+            }
+        else{
+                aImg[0].className = "leftrotate";
+                aImg[1].className = "";
+                aImg[2].className = "";
+                aImg[3].className = "";
+                aImg[4].className = "";
+                aImg[5].className = "";
+                iNow++;
+            }
+    }
+</script>
+
+</body>
+</html>
