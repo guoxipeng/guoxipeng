@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>郭栖澎的网站</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+   <div id="home">
+       <div class="wrapper">
+           <div id="menu">
+           <div id="name">郭栖澎</div>
+           <ul id="min-menu">
+               <li><a class="scroll" href="#home">首页</a></li>
+               <li><a class="scroll" href="#about">个人资料</a></li>
+               <li><a class="scroll" href="#skills">技能</a></li>
+               <li><a class="scroll" href="#portfolio">作品</a></li>
+               <li><a class="scroll" href="#contact">联系我</a></li>
+           </ul>
+           </div>
+           <div id="people">
+               <img src="img/people.png" alt="" />
+           </div>
+       </div>
+   </div>
+   <div id="about">
+       <div class="wrapper">
+           <div id="about-me">
+               <h3>ABOUT ME</h3>
+               <h4>Who I am and why I design</h4>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+           </div>
+           <div id="about-exprience">
+               <h4>WHAT I DO AND MY EXPERIENCE</h4>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+           </div>
+           <div id="about-goals">
+               <h4>MY GOALS</h4>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+           </div>
+       </div>
+   </div>
+   <div id="skills">
+       <div class="wrapper">
+           <h2>MY SKILLS</h2>
+           <div id="html5">
+               <img src="img/circle004.png" alt=""/>
+               <h1>80%</h1>
+               <h3>HTML5/CSS3</h3>
+           </div>
+           <div id="js">
+               <img src="img/circle003.png" alt=""/>
+               <h1>70%</h1>
+               <h3>JaveScript</h3>
+           </div>
+           <div id="php">
+               <img src="img/circle002.png" alt=""/>
+               <h1>60%</h1>
+               <h3>PHP</h3>
+           </div>
+           <div id="node">
+               <img src="img/circle001.png" alt=""/>
+               <h1>50%</h1>
+               <h3>Node.Js</h3>
+           </div>
+
+       </div>
+   </div>
+   <div id="portfolio">
+       <div class="wrapper">
+           <h3>PORTFOLIO</h3>
+           <div id="portfolio-imgs">
+               <img src="img/a1.jpg" alt=""/>
+               <img src="img/a2.jpg" alt=""/>
+               <img src="img/a3.jpg" alt=""/>
+               <img src="img/a4.jpg" alt=""/>
+               <img src="img/a5.jpg" alt=""/>
+               <img src="img/a6.jpg" alt=""/>
+               <img src="img/a7.jpg" alt=""/>
+               <img src="img/a8.jpg" alt=""/>
+               <img src="img/a2.jpg" alt=""/>
+           </div>
+       </div>
+   </div>
+   <div id="contact">
+       <div class="wrapper">
+           <div id="address">
+               <img src="img/address.png" alt=""/>
+               <h3>哈尔滨市香坊区</h3>
+           </div>
+           <div id="email">
+               <img src="img/email.png" alt=""/>
+               <h3>1332475556@qq.com</h3>
+           </div>
+           <div id="phone">
+               <img src="img/phone.png" alt=""/>
+               <h3>15504573358</h3>
+           </div>
+           <div id="contact-info">
+               <input placeholder="姓名" type="text" required/>
+               <input placeholder="邮箱" type="text" required/>
+               <input placeholder="联系电话" type="text" required/>
+               <textarea placeholder="想对我说点什么" required ></textarea>
+               <input type="submit" value="发送"/>
+           </div>
+       </div>
+       <div id="foot">
+               欢迎访问郭栖澎的网站  www.guoxipeng.com
+       </div>
+   </div>
+   <script  src="js/jquery-1.12.4.js"></script>
+   <script>
+       jQuery(document).ready(function($){
+           $('.scroll').click(function(){
+               event.preventDefault();
+               $('body').animate({scrollTop:$(this.hash).offset().top},1000);
+           });
+       });
+   </script>
+</body>
+</html>

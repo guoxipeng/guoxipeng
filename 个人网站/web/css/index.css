@@ -1,0 +1,244 @@
+#home{
+    background:#ced7df;
+    border: 0;
+}
+#home .wrapper{
+    display: -webkit-box;
+    overflow: hidden;
+ }
+#home .wrapper > div{
+    -webkit-box-flex: 1;
+    margin:90px 0 90px;
+}
+#name{
+    /*line-height: 108px;*/
+    font-size:100px;
+    font-weight: 700;
+ }
+#min-menu{
+    margin-top: 70px;
+}
+#min-menu a{
+    display: block;
+    height:40px;
+    width: 70%;
+    background: #ffffff;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 18px;
+    color:#333333;
+    font-weight: 700;
+}
+#min-menu a:hover{
+    background: #e0e0e0;
+}
+#home #people{
+     margin-top: 150px;
+}
+#home img{
+      width: 100%;
+}
+@media (max-width: 767px){
+    #menu{
+        /*width: 100%;*/
+    }
+    #home img{
+        width: 50%;
+    }
+    #name{
+        font-size: 4rem;
+    }
+
+}
+#move-top{
+    position: fixed;
+    top: 600px;
+    right: 0;
+    /*display: none;*/
+}
+#about{
+    height: 540px;
+    background: #6CE26C;
+    border: 0;
+}
+#about .wrapper{
+    position: relative;
+    text-align: center;
+}
+#about-me{
+    position: absolute;
+    text-align: center;
+    margin:80px;
+}
+#about-me h3{
+    height: 48px;
+    font-size: 48px;
+}
+#about-me h4{
+    height: 18px;
+    margin-top: 15px;
+    color: #d9ffc4;
+}
+#about-me p{
+    width: 830px;
+    height: 75px;
+    margin-top: 15px;
+}
+#about-exprience{
+    width: 534px;
+    height: 154px;
+    position:absolute;
+    left: 0;
+    top:298px;
+}
+#about-goals{
+    width: 450px;
+    height: 154px;
+    position:absolute;
+    right: 0;
+    top:298px;
+}
+#about-exprience h4,#about-goals h4{
+     font-size: 26px;
+     margin-top: 15px;
+     color: #d9ffc4;
+     text-align: left;
+ }
+#about-exprience p,#about-goals p{
+    margin-top: 15px;
+    text-align: left;
+}
+#skills{
+    height: 500px;
+    background: #323b43;
+    border: 0;
+}
+#skills .wrapper{
+    position: relative;
+    text-align: center;
+}
+#skills h2{
+    height: 48px;
+    position: absolute;
+    top:81px;
+    left: 420px;
+    font-size: 48px;
+    color: #d9ffc4;
+}
+#skills h1{
+    position: absolute;
+    top: 70px;
+    left: 120px;
+}
+#skills h3{
+    margin-top: 50px;
+    font-size: 30px;
+}
+#html5,#js,#php,#node{
+    width: 285px;
+    height: 230px;
+    position: absolute;
+    top: 184px;
+}
+#html5{
+    left:0;
+}
+#js{
+    left: 255px;
+}
+#php{
+    left: 510px;
+}
+#node{
+    left: 765px;
+}
+#portfolio{
+    height: 1052px;
+    background: #ced7df;
+}
+#portfolio .wrapper{
+    position: relative;
+    text-align: center;
+}
+#portfolio h3{
+    position: absolute;
+    top: 90px;
+    left: 420px;
+    font-size: 48px;
+    color: #76b852;
+}
+#portfolio-imgs{
+    position: absolute;
+    top: 192px;
+
+}
+#portfolio-imgs img{
+    float: left;
+    margin: 2px;
+    border: 2px solid white;
+}
+#contact{
+    height: 618px;
+    background: #76b852;
+}
+#contact .wrapper{
+    position: relative;
+}
+#contact img{
+    margin-bottom: 20px;
+}
+#address,#email,#phone{
+    position: absolute;
+    top: 70px;
+    text-align: center;
+}
+#address{
+    left: 120px;
+}
+#email{
+    left: 490px;
+}
+#phone{
+    left: 860px;
+    top: 80px;
+}
+#contact-info{
+    position: absolute;
+    top: 240px;
+    left: 30px;
+}
+#contact-info input{
+    width: 300px;
+    border: none;
+    color: #c9c9c9;
+    margin: 0 30px 23px 0;
+    padding: 12px 10px;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+#contact-info textarea{
+    width: 100%;
+    height: 225px;
+}
+#contact-info input:last-child{
+    width: 182px;
+    height: 48px;
+    background: #333333;
+
+}
+#foot{
+    height: 50px;
+    background: #333333;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+

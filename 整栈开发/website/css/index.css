@@ -1,0 +1,84 @@
+#banner{
+    height: 460px;
+    background: url(../img/bg.png) repeat-x;
+    border: 0;
+}
+#banner .wrapper{
+    position: relative;
+}
+
+#banner .arrow {
+    width: 29px;
+    height: 50px;
+    background-image: url(../img/arrow.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+}
+#banner .prev{
+    background-position: 0 0;
+    left: 0;
+}
+#banner .next{
+     background-position: -29px 0;
+     right: 0;
+ }
+#banner-img{
+    width: 732px ;
+    height:398px;
+    background-image: url(../img/banner01.png);
+    background-repeat: no-repeat;
+    background-position: -123px -54px;
+    position: absolute;
+    left: 146px;
+    top: 39px;
+}
+#news{
+    height: 492px;
+}
+#news .news1{
+    width: 286px;
+    height: 318px;
+    background-image: url(../img/arrow.png);
+    background-repeat: no-repeat;
+    background-position: 0 -59px;
+    position: absolute;
+    top: 86px;
+}
+#news .news2{
+    width: 286px;
+    height: 318px;
+    background-image: url(../img/arrow.png);
+    background-repeat: no-repeat;
+    background-position: -293px -59px;
+    position: absolute;
+    top: 86px;
+    left: 357px;
+}
+#news .news3{
+    width: 286px;
+    height: 318px;
+    background-image: url(../img/arrow.png);
+    background-repeat: no-repeat;
+    background-position: -586px -59px;
+    position: absolute;
+    top: 86px;
+    left: 690px;
+}
+#works{
+    height: 500px;
+    background: url(../img/bg1.png) repeat-x; ;
+}
+#works ul{
+    position: absolute;
+    top: 70px;
+}
+#works li{
+    width: 250px;
+    height: 200px;
+    float:left;
+    overflow: hidden;
+}
+
+

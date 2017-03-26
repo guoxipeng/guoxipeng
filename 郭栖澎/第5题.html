@@ -112,7 +112,7 @@
         <img src="imgs/5.jpg" alt=""/>
         <img src="imgs/6.jpg" alt=""/>
         <img src="imgs/7.jpg" alt=""/>
-        <img src="imgs/8.jpg" alt=""/>>
+        <img src="imgs/8.jpg" alt=""/>
     </div>
         <span id="prev"></span>
         <span id="next"></span>
@@ -131,15 +131,30 @@
     var zIndex = 8;
     var iClick = 0;
     var timer ;
+
     for(i=0;i<aImg2.length;i++) {
         aImg2[i].index = i;
         aImg1[i].style.zIndex = aImg1.length - i;
+        aImg2[i].onmouseover = function(){
+            animate(aImg2[this.index],{
+               opacity:100
+            })
+        };
+        aImg2[i].onmouseout = function(){
+            animate(aImg2[this.index],{
+                opacity:30
+            })
+        };
         aImg2[i].onclick = function () {
             iClick = this.index;
             myfunction(this.index);
             oNumber.innerHTML= this.index+1 + "/8";
         }
     }
+    document.onselectstart = function(){
+        return false;
+    };
+
     oNext.onmouseover = oPrev.onmouseover =function(){
         animate(this, {opacity: 100});
     };
@@ -149,9 +164,11 @@
     oPrev.onclick = oNext.onclick = function(){
         if(this == oPrev){
             iClick--;
-            if(iClick == -1){
-                iClick = aImg2.length ;
-                oContent2.style.left = -(aImg2.length - 4) * iImgWidth +  "px";
+            if(iClick < 0){
+                iClick = aImg2.length-1 ;
+                animate(oContent2,{
+                    left:-(aImg2.length - 4) * iImg2Width
+                })
             }
             myfunction(iClick);
             oNumber.innerHTML= iClick+1 + "/8";
@@ -160,7 +177,9 @@
             iClick++;
             if(iClick == aImg2.length){
                 iClick = 0;
-                oContent2.style.left = 0;
+                animate(oContent2,{
+                    left:0
+                })
             }
             myfunction(iClick);
             oNumber.innerHTML= iClick+1 + "/8";

@@ -1,0 +1,42 @@
+/* 样式重置开始 */
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+
+}
+ul, ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+/* 样式重置结束 */
+/* 通用样式开始 */
+
+.wrapper{
+        width: 1170px;
+        height: 100%;
+        margin: 0 auto;
+    }
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+html{
+    font-size: 16px;
+    font-family: AvenirRoman, HelveticaNeue-Light, Helvetica Neue, arial, Hiragino Sans GB, 冬青黑体, Microsoft YaHei New, Microsoft Yahei, 微软雅黑, 宋体, SimSun, STXihei, 华文细黑, sans-serif;
+}
+
+/* 通用样式结束 */

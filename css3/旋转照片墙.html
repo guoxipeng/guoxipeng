@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            perspective: 1000px;
+            perspective-origin: 50% -80%;
+        }
+        #container{
+            width: 200px;
+            height: 200px;
+            position:relative;
+            margin: 300px auto;
+            transform-style: preserve-3d;
+            perspective-origin: 50% 50%;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+            /*-webkit-animation: rotate 3s linear infinite;*/
+            /*-o-animation: rotate 3s linear infinite;*/
+            /*animation:rotate 3s linear infinite;*/
+        }
+        #container img{
+            width: 200px;
+            height: 200px;
+            position:absolute;
+        }
+        @keyframes rotate {
+            from{
+
+            }
+            to{
+                transform: rotateY(-360deg);
+            }
+        }
+
+        #container img:first-child{
+            -webkit-transform:rotateY(0deg) translateZ(300px) ;
+            -moz-transform:rotateY(0deg) translateZ(300px) ;
+            -ms-transform:rotateY(0deg) translateZ(300px) ;
+            -o-transform: rotateY(0deg) translateZ(300px);
+            transform:rotateY(0deg) translateZ(300px) ;
+        }
+        #container img:nth-child(2){
+            -webkit-transform:rotateY(40deg) translateZ(300px) ;
+            -moz-transform:rotateY(40deg) translateZ(300px) ;
+            -ms-transform:rotateY(40deg) translateZ(300px) ;
+            -o-transform:rotateY(40deg) translateZ(300px) ;
+            transform:rotateY(40deg) translateZ(300px) ;
+        }
+        #container img:nth-child(3){
+            -webkit-transform:rotateY(80deg) translateZ(300px) ;
+            -moz-transform:rotateY(80deg) translateZ(300px) ;
+            -ms-transform:rotateY(80deg) translateZ(300px) ;
+            -o-transform:rotateY(80deg) translateZ(300px) ;
+            transform:rotateY(80deg) translateZ(300px) ;
+        }
+        #container img:nth-child(4){
+            -webkit-transform:rotateY(120deg) translateZ(300px) ;
+            -moz-transform:rotateY(120deg) translateZ(300px) ;
+            -ms-transform:rotateY(120deg) translateZ(300px) ;
+            -o-transform:rotateY(120deg) translateZ(300px) ;
+            transform:rotateY(120deg) translateZ(300px) ;
+        }
+        #container img:nth-child(5){
+            -webkit-transform: rotateY(160deg) translateZ(300px) ;
+            -moz-transform:rotateY(160deg) translateZ(300px) ;
+            -ms-transform:rotateY(160deg) translateZ(300px) ;
+            -o-transform:rotateY(160deg) translateZ(300px) ;
+            transform:rotateY(160deg) translateZ(300px) ;
+        }
+        #container img:nth-child(6){
+            -webkit-transform: rotateY(200deg) translateZ(300px) ;
+            -moz-transform: rotateY(200deg) translateZ(300px) ;
+            -ms-transform: rotateY(200deg) translateZ(300px) ;
+            -o-transform: rotateY(200deg) translateZ(300px) ;
+            transform: rotateY(200deg) translateZ(300px) ;
+        }
+        #container img:nth-child(7){
+            -webkit-transform: rotateY(240deg) translateZ(300px) ;
+            -moz-transform: rotateY(240deg) translateZ(300px) ;
+            -ms-transform:rotateY(240deg) translateZ(300px) ;
+            -o-transform: rotateY(240deg) translateZ(300px) ;
+            transform: rotateY(240deg) translateZ(300px) ;
+        }
+        #container img:nth-child(8){
+            -webkit-transform: rotateY(280deg) translateZ(300px) ;
+            -moz-transform: rotateY(280deg) translateZ(300px) ;
+            -ms-transform: rotateY(280deg) translateZ(300px) ;
+            -o-transform: rotateY(280deg) translateZ(300px) ;
+            transform: rotateY(280deg) translateZ(300px) ;
+        }
+        #container img:nth-child(9){
+            -webkit-transform:  rotateY(320deg) translateZ(300px);
+            -moz-transform: rotateY(320deg) translateZ(300px) ;
+            -ms-transform: rotateY(320deg) translateZ(300px) ;
+            -o-transform: rotateY(320deg) translateZ(300px) ;
+            transform: rotateY(320deg) translateZ(300px) ;
+        }
+        #container:hover {
+            animation: rotate 3s linear infinite;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <img  alt="" src="img/1.jpg"/>
+    <img  alt="" src="img/2.jpg"/>
+    <img  alt="" src="img/3.jpeg"/>
+    <img  alt="" src="img/4.jpeg"/>
+    <img  alt="" src="img/5.jpeg"/>
+    <img  alt="" src="img/6.jpeg"/>
+    <img  alt="" src="img/7.jpeg"/>
+    <img  alt="" src="img/8.jpeg"/>
+    <img  alt="" src="img/9.jpeg"/>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+.footer{ background:#262626; }
+.service{ background:#262626;}
+
+.bottom-nav-toggle{color: #b5b5b5; font-size: 16px; text-align: center; height: 41px; border-bottom: 1px #3c3c3c solid; line-height: 41px; }
+.bottom-nav-toggle a{color: #b5b5b5; cursor: pointer; position: relative; }
+.bottom-nav-toggle a span{margin-left: 10px; vertical-align: middle; position: absolute; top: -12px;}
+.bottom-nav-toggle a.up span{top: -6px;}
+.footer_centent{ width:1200px; margin:0 auto; padding:32px 0 45px;}
+.footer_logo{ padding-right:70px; width:190px;}
+
+.helps{ border-left:#3d3d3d solid 1px; width:208px;line-height:40px; text-indent:5px; height:175px; margin-top:17px;}
+.helps dt { width:50%; text-align:center; color:#1ec800; font-size:14px; line-height:14px; margin-bottom:12px;}
+.helps a:hover{ text-decoration:underline}
+.helps dt a{ color:#1ec800;}
+.helps dd{ float:left; width:50%; text-align:center; color:#FFF }
+.helps dd a{ color:#FFF; cursor: pointer;}
+
+.supports{ width:130px}
+.supports dt,.supports dd{ width:100%;}
+
+.footer_tel{ border-left:#3d3d3d solid 1px;height:175px; margin-top:17px; width:259px;}
+.footer_tel .tel,.footer_tel .workday{ color:#1ec800; font-size:30px; line-height:30px; text-align:right}
+.footer_tel .workday{ color:#666; font-size:12px;}
+
+.bdsharebuttonbox{ margin:50px 0 0 44px }
+.service .bdsharebuttonbox a{ background:url(../images/footer_share.png); width:30px; height:30px; display:block; float:left; margin-right:7px; padding:0}
+.bdsharebuttonbox a.last{ margin-right:0}
+.bdsharebuttonbox a.qzone{ background-position:-37px 0}
+.bdsharebuttonbox a.weibo{ background-position:-74px 0}
+.bdsharebuttonbox a.tweibo{ background-position:-111px 0}
+.bdsharebuttonbox a.ren{ background-position:-148px 0}
+.bdsharebuttonbox a.wx{ background-position:-185px 0}
+
+.copyright{ border-top:#3d3d3d solid 1px; color:#666; text-align:center; line-height:33px; padding:10px}
+.copyright p{ width:1200px; margin:0 auto}
+.copyright p a{ color:#666; cursor: pointer;}
+.copyright p.link{ padding:15px 0 2px}
+.copyright p.link a img{height:33px; width:86px; }
+.copyright p.link a{ margin-right:16px;}
+
+.certificate-bj{display: none; position: fixed; left: 0; top: 0; z-index: 11000; background: url(../images/1px/commonbg.png) repeat; width: 100%; height: 100%;}
+.certificate-bj img{width: 800px; position: relative; left: 50%; top: 50%; margin: -285px 0 0 -400px; }
+
+.xhzx{ position:fixed; right:0; top:150px; width:57px; height:111px; overflow:hidden; display:none; cursor:pointer}
+.xhzx img{ width:57px; height:111px; }

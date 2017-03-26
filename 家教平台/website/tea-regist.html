@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <title>用户注册-教育网</title>
+    <meta name="keywords" content="在线一对一,注册会员,家教网注册"/>
+    <meta name="description" content="注册家教网会员，开启在线教育之旅！"/>
+    <meta name="author" content="say"/>
+    <!-- No Baidu Siteapp -->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!--Icon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!--Css-->
+
+    <link  rel="stylesheet" type="text/css" href="css/head.css" />
+    <link  rel="stylesheet" type="text/css" href="css/common.css" />
+    <link  rel="stylesheet" type="text/css" href="css/nav.css" />
+    <link  rel="stylesheet" type="text/css" href="css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="css/user.css" />
+    <link rel="stylesheet" href="css/regist.css"/>
+</head>
+<body>
+<!-- 注册流程  -->
+<div class="regist-step" >
+    <!--头部-->
+    <div class="user-top2">
+        <div class="user-top2-c">
+            <a href="/"><img class="user-top2-logo" src="img/logo1.png" /></a>欢迎注册
+            <div class="fr user-top2-fastlink">
+                已有账号，<a title="登录" class="" href="http://www.sanhao.com:80/login.php">直接登录</a>
+            </div>
+        </div>
+    </div>
+    <!--头部结束-->
+    <div class="wrap2 regist-style-box3">
+        <div class="regist-main">
+            <div class="regist-centent clearboth" id="regist-box">
+                <div class="left regist-centent-box pos_r">
+                    <h1 class="reg-title type1">老师<br /><span class="">注册在平台授课</span></h1>
+                    <div class="reg_teacher">
+                        我是学生<a href="login.html">注册</a>
+                    </div>
+                    <form action="login.html" method="post">
+                        <input type="hidden" name="usertype" value="1"/>
+                        <div class="par clearboth">
+                            <div class="value">
+                                <input type="text"  class="input1 sty1" name="mobil" placeholder="请输入您的手机号" autocomplete="off" reg="^(((13[0-9]{1})|15[0-9]{1}|18[0-9]{1}|14[0-9]{1}|17[0-9]{1})+\d{8})$" tip="mobil" ps="请输入正确的手机号格式"/>
+                                <span id="mobil" class="tips"></span>
+                                <a  class="clear-text"></a>
+                            </div>
+                        </div>
+                        <div class="par clearboth">
+                            <div class="value">
+                                <input class="input1 sty5" id="pwds1"  type="password" maxlength="12" minlength="6"  autocomplete="off" name="pwd1" placeholder="请输入您的密码" reg="^\S{5,15}$" tip="pwd1" ps="密码为6到12位字母和数字组合"/>
+                                <span class="tips" id="pwd1"></span>
+                                <a  class="clear-text"></a>
+                            </div>
+                        </div>
+                        <div class="par clearboth">
+                            <div class="value">
+                                <input class="input1 sty5" id="pwds2"  type="password" maxlength="12" minlength="6"  autocomplete="off" name="pwd2" placeholder="请再次输入密码" reg="^\S{5,15}$" tip="pwd2" ps="密码为6到12位字母和数字组合"/>
+                                <span class="tips" id="pwd2"></span>
+                                <a  class="clear-text"></a>
+                            </div>
+                        </div>
+                        <div class="clearboth">
+                            <input class="btn btn-cart reg-submit"  value="注&nbsp;&nbsp;&nbsp;&nbsp;册" type="submit" />
+                        </div>
+                        <div class="par clearboth agreementBox">
+                            <div class="value">
+                                <input class="agree" checked="checked" id="agree" type="hidden" /><label for='agree'>注册代表您已经阅读并同意<a class="agreeC" href="joinus.php#3" target="_blank">《家教网服务条款》</a></label>
+                            </div>
+                        </div>
+                        <div class="par clearboth tologin">
+                            <div class="value">
+                                已有账号，直接<a href="login.html">登录</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 服务 -->
+
+<!-- 底部 -->
+<div id="login_footer">
+    <div id="login_footer_content">
+        <a href="joinus.php#2">联系我们</a>
+        <a href="joinus.php#1">加入我们</a>
+        <a href="joinus.php#3">网站条款</a>
+        <a href="helpcenter.php#1">帮助中心</a>
+        <a href="pay-help.php#0">服务支持</a>
+        <a href="pay-help.php#1">意见反馈</a>
+        <a id="show-weixin">官方微信</a>
+        <span>客服电话：12345678</span>
+    </div>
+    <p class="copy-right">欢迎访问教育网www.jiaoyu.com</p>
+</div>
+
+<!--弹出确认框-->
+<div class="confirmBox" id="confirmBox">
+    <div class="confirmBoxWarp">
+        <div class="bg"></div>
+        <div class="confBox">
+            <h2 class="conftitle"><a  class="confClose">×</a><!--标题--><span class="title">确认</span></h2>
+            <div class="confCentent">
+                <!--确认框信息-->
+            </div>
+            <ul class="confirmBoxControl both">
+                <li class="yes "><a class="button_sty1" >确定</a></li>
+                <li class="no"><a class="button_sty2" >取消</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--end 弹出确认框-->
+<!--错误提示框-->
+<div id="errorBox" class="errorBox">
+    <div class="errorBoxWarp">
+        <div class="bg"></div>
+        <div class="errbox">
+            <h2 class="errtitle"><a class="errClose" >×</a><span class="title">提示</span></h2>
+            <div class="errCentent"><!--错误提示框信息--></div>
+            <div class="errorBox-sure"><a class="button_sty1 err-sure">确定</a></div>
+        </div>
+    </div>
+</div>
+<!--end 错误提示框-->
+</body>
+</html>
