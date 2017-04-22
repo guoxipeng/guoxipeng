@@ -107,7 +107,7 @@ strong{font-weight: normal;}
 .course_indxe{position: absolute; height: auto;}
 .nav_centent{position: relative;}
 .nav_bax .depth1{font-size: 16px;}
-.main-navlist{display: inline-block; position: absolute; top: -52px; left: 300px; }
+.main-navlist{display: inline-block; position: absolute; top: -50px; left: 300px; }
 .main-navlist .underline{position: absolute; background-color: #4d4f52; width: 32px; height: 3px; padding-left: 3px; padding-right: 3px; left: 15px; bottom: 0;}
 .main-navlist a{ display: inline-block; color: #333; font-size: 16px;padding: 0 18px; line-height: 52px;}
 .main-navlist a:hover{color: inherit;}

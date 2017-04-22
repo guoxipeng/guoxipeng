@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var num = read_line();
+    var arr1 = [];
+    for(var i=0;i<parseInt(num);i++){
+        var str = read_line();
+        arr1.push(str.split(' '));
+
+    }
+    var total = 0;
+    var arr = [];
+    for(var i=0;i<arr1.length;i++){
+
+        if(arr.indexOf(arr1[i][0]) == -1){
+            arr.push(arr1[i][0]);
+            if(arr1[i][1] == 1){
+                total += 10;
+            }
+            if(arr1[i][2] == 1){
+                total += 20;
+            }
+        }else{
+            if(arr1[i][1] == 1 && arr1[i][2] == 1){
+                total += 30;
+            }else if(arr1[i][1] == 1 && arr1[i][2] == 0){
+                total += 5;
+            }
+        }
+    }
+    print(total);
+
+</script>
+
+</body>
+</html>

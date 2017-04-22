@@ -384,17 +384,5 @@
         <!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
     </div>
 
-    <script type="text/javascript">
-        function succeedhandle_followmod(url, msg, values) {
-            var fObj = $('followmod_'+values['fuid']);
-            if(values['type'] == 'add') {
-                fObj.innerHTML = '不收听';
-                fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid'];
-            } else if(values['type'] == 'del') {
-                fObj.innerHTML = '收听TA';
-                fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash=2b4132c0&fuid='+values['fuid'];
-            }
-        }
-        fixed_avatar([370412], 1);
-    </script>	</div>
+    	</div>
 </body>
