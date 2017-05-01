@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="btnClick"><img src="img/btn-bg.png" alt=""/></div>
+<div class="container">
+    <div class="stick"></div>
+    <div class="soldier"><img src="img/stick_stand.png"/></div>
+    <div class="well-box">
+    </div>
+</div>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        /*切换BODY的背景，随机产生*/
+        function changebg(){
+            var num = parseInt((Math.random()*19)+1);
+            $('body').attr('class',"bg"+num);
+        }
+        changebg();
+        /*添加六个桥墩*/
+        $('.well-box').html('<div class="well"></div><div class="well"></div><div class="well"></div><div class="well"></div><div class="well"></div><div class="well"></div>');
+        $('.well').css('width','100px');
+        /*声明变量*/
+        var j=0;
+        var wellBoxL=0;
+        var wellW = $('.well:eq(0)').width();
+        var stickH = $('.container').offset().top;
+        var stickLeft=wellW-$(".stick").width();
+        var legap = 0;
+        var min = 60;
+        var stop = false;
+        /*设定桥墩之间的距离*/
+        function gap(){
+            for(var i=1;i<6;i++){
+                var max=parseInt(stickH-min);
+                var wellgap=parseInt(Math.random()*max)+min;
+                legap += wellgap;
+                $(".well-box .well").eq(i).css("left",legap+(wellW*i)+"px")
+            }
+        }
+        gap();
+        /*设定士兵的初始状态*/
+        function soldierstar(){
+            $('.soldier img').attr('src','img/stick_stand.png');
+            $('.soldier').css('left','50px');
+        }
+        /*设定棍子的初始状态*/
+        function stickstar(){
+            $(".stick").css("left",stickLeft+"px").removeClass("stickdown");
+        }
+        /*重置初始状态*/
+        function replay(){
+//            j=0;
+//            legap=0;
+//            gap();
+//            $(".well-box").css("left","0");
+//            changebg();
+//            soldierstar();
+//            stickstar();
+//            wellBoxL=0;
+//            stop=false;
+            location.reload();
+        }
+        /*设置弹框*/
+        var btn = $('<a href="javascript:void(0);" class="playAgin" >再试一次</a>');
+        function dialog(val,result){
+            var $dialogDiv=$('<div class="dialog"><p>'+val+'</p><p class="dialog-btn"></p></div>');
+            $("body").append($dialogDiv);
+            if(!result){
+                alert(111);
+                $(".dialog-btn").html('<a href="javascript:void(0);" class="playAgin" >重玩一次</a><a href="javascript:void(0);" class="go-next">下一关</a>');
+                /*绑定事件*/
+                $(".go-next").on("click",function(){
+                    $(".dialog").hide();
+                    replay();
+                });
+            }else{
+                $(".dialog-btn").html(btn);
+                console.log(11+ $('.playAgin'));
+                $('.playAgin').on("click",function(){
+                    $(".dialog").remove();
+                    replay();
+                });
+            }
+        }
+        /*士兵进行移动*/
+        function move(){
+            $('.soldier img').attr( 'src' ,'img/stick.gif');
+            var soldierW = $('.soldier').width();
+            var stickW = $('.stick').height();
+            var moveW = soldierW+stickW;//士兵移动的距离
+            var preWell=$('.well').eq(j).offset().left;
+            var nextWell=$('.well').eq(j+1).offset().left;
+            var btwell=nextWell-preWell-100;//桥墩之间的缝隙
+            $('.soldier').animate({'left':moveW+'px'},1000,function(){
+                /*判断是不是摔死了*/
+                if(stickW<btwell||stickW>btwell+100){
+                    $('stick').height('0');
+                    $(".soldier img").addClass("rotate");
+                    setTimeout(function(){$(".soldier").hide()},200);
+                    dialog("摔死了吧",true);
+                }else{
+                    $('.stick').height('0');
+                    $('.soldier').hide();
+                    wellBoxL+=nextWell;
+                    $(".well-box").animate({"left":"-"+wellBoxL+"px"},10,function() {
+                        $('.soldier').show();
+                        soldierstar();
+                        stickstar();
+                        j++;
+                        stop = false;
+                        if (j == 5) {
+                            stop=true;//阻止棍子继续伸长
+                            dialog("给你个么么哒",false);
+                        }
+                    });
+                }
+            });
+        }
+        /*绑定单机事件*/
+        $(".btnClick").mousedown(function () {
+            if(!stop){
+                $(".stick").animate({"height": stickH + "px"}, 1800);
+                $(this).css("background","url(img/btn-bg-click.png) no-repeat");
+            }
+        }).mouseup(function () {
+            if(!stop){                  //避免士兵跑的过程中按按钮
+                $(this).css("background","url(img/btn-bg.png) no-repeat");
+                $(".stick").stop().addClass("stickdown");
+                timer=setTimeout(move, 500);}
+                stop = true;
+        })
+
+
+    });
+</script>
+</body>
+</html>
